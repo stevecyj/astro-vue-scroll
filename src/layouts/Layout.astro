@@ -50,6 +50,25 @@ const { title, description = "Astro Vue Vertical Scroll Demo" } = Astro.props
         animation: slide-in-down 0.6s ease-in-out;
       }
 
+      ::view-transition-old(hero-page),
+      ::view-transition-old(about-page) {
+        animation: slide-out-down 0.6s ease-in-out;
+      }
+
+      ::view-transition-new(hero-page),
+      ::view-transition-new(about-page) {
+        animation: slide-in-up 0.6s ease-in-out;
+      }
+
+      ::view-transition-old(hero-page-up),
+      ::view-transition-old(about-page-up) {
+        animation: slide-out-up 0.6s ease-in-out;
+      }
+
+      ::view-transition-old(normal-page-down) {
+        animation: slide-out-down 0.6s ease-in-out;
+      }
+
       @keyframes slide-out-up {
         from {
           transform: translateY(0);
@@ -72,12 +91,72 @@ const { title, description = "Astro Vue Vertical Scroll Demo" } = Astro.props
         }
       }
 
+      @keyframes slide-out-down {
+        from {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+
+      @keyframes slide-in-up {
+        from {
+          transform: translateY(-100vh);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         ::view-transition-old(root),
-        ::view-transition-new(root) {
+        ::view-transition-new(root),
+        ::view-transition-old(hero-page),
+        ::view-transition-old(about-page),
+        ::view-transition-new(hero-page),
+        ::view-transition-new(about-page),
+        ::view-transition-old(hero-page-up),
+        ::view-transition-old(about-page-up),
+        ::view-transition-old(normal-page-down) {
           animation: none;
         }
       }
     </style>
+    <script>
+      document.addEventListener('astro:before-preparation', (event) => {
+        const currentPageElement = document.querySelector('[data-page-type]');
+        const currentPageType = currentPageElement?.getAttribute('data-page-type');
+        
+        // Get target page type by URL mapping
+        const targetUrl = event.to.pathname;
+        const isTargetSpecial = targetUrl === '/' || targetUrl === '/who-we-are';
+        const targetPageType = isTargetSpecial ? 'special' : 'normal';
+        
+        // If transitioning from special to normal page, use upward exit animation
+        if (currentPageType === 'special' && targetPageType === 'normal') {
+          if (currentPageElement) {
+            const currentTransitionName = currentPageElement.style.viewTransitionName || 
+              window.getComputedStyle(currentPageElement).viewTransitionName;
+            
+            if (currentTransitionName === 'hero-page') {
+              currentPageElement.style.viewTransitionName = 'hero-page-up';
+            } else if (currentTransitionName === 'about-page') {
+              currentPageElement.style.viewTransitionName = 'about-page-up';
+            }
+          }
+        }
+        // If transitioning from normal to special page, use downward exit animation
+        else if (currentPageType === 'normal' && targetPageType === 'special') {
+          if (currentPageElement) {
+            currentPageElement.style.viewTransitionName = 'normal-page-down';
+          }
+        }
+      });
+    </script>
   </body>
 </html>

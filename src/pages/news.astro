@@ -1,11 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import LayoutWrapper from "../components/LayoutWrapper.vue"
 import NewsSection from "../views/NewsSection.vue"
 ---
 
 <Layout title="News - Demo">
-  <LayoutWrapper>
-    <NewsSection client:load />
-  </LayoutWrapper>
+  <NewsSection client:load />
 </Layout>

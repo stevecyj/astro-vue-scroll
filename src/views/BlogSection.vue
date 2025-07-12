@@ -2,7 +2,7 @@
 import LayoutWrapper from "@/components/LayoutWrapper.vue"
 </script>
 <template>
-  <div class="blog-section">
+  <div class="blog-section" data-page-type="normal">
     <LayoutWrapper>
       <div class="container">
         <h1>Our Blog</h1>

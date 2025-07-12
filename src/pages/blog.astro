@@ -1,11 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import LayoutWrapper from "../components/LayoutWrapper.vue"
 import BlogSection from "../views/BlogSection.vue"
 ---
 
 <Layout title="Blog - Demo">
-  <LayoutWrapper>
-    <BlogSection client:load />
-  </LayoutWrapper>
+  <BlogSection client:load />
 </Layout>

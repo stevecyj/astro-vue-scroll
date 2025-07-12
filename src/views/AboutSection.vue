@@ -2,7 +2,7 @@
 import LayoutWrapper from "@/components/LayoutWrapper.vue"
 </script>
 <template>
-  <div class="about-section">
+  <div class="about-section" data-page-type="special">
     <LayoutWrapper>
       <div class="container">
         <h1>Who We Are</h1>
@@ -39,6 +39,7 @@ import LayoutWrapper from "@/components/LayoutWrapper.vue"
   justify-content: center;
   color: white;
   text-align: center;
+  view-transition-name: about-page;
 }
 
 .container {

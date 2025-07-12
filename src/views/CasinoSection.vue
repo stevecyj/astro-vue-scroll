@@ -2,7 +2,7 @@
 import LayoutWrapper from "@/components/LayoutWrapper.vue"
 </script>
 <template>
-  <div class="casino-section">
+  <div class="casino-section" data-page-type="normal">
     <LayoutWrapper>
       <div class="container">
         <h1>Live Casino</h1>

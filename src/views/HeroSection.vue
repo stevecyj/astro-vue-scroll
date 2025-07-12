@@ -5,7 +5,7 @@ const handleClick = () => {
 }
 </script>
 <template>
-  <div class="hero-section">
+  <div class="hero-section" data-page-type="special">
     <LayoutWrapper>
       <div class="container">
         <h1>Welcome to Our Platform</h1>
@@ -28,6 +28,7 @@ const handleClick = () => {
   justify-content: center;
   color: white;
   text-align: center;
+  view-transition-name: hero-page;
 }
 
 .container {

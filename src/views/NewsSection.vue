@@ -2,7 +2,7 @@
 import LayoutWrapper from "@/components/LayoutWrapper.vue"
 </script>
 <template>
-  <div class="news-section">
+  <div class="news-section" data-page-type="normal">
     <LayoutWrapper>
       <div class="container">
         <h1>Latest News</h1>

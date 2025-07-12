@@ -2,7 +2,7 @@
 import LayoutWrapper from "@/components/LayoutWrapper.vue"
 </script>
 <template>
-  <div class="contact-section">
+  <div class="contact-section" data-page-type="normal">
     <LayoutWrapper>
       <div class="container">
         <h1>Contact Us</h1>
