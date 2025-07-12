@@ -12,8 +12,8 @@ import { StagewiseToolbar } from "@stagewise/toolbar-vue"
           <li><a href="/who-we-are">Who We Are</a></li>
           <li><a href="/live-casino">Live Casino</a></li>
           <li><a href="/news">News</a></li>
-          <li><a href="/contact">Contact Us</a></li>
           <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact Us</a></li>
         </ul>
       </div>
     </nav>
