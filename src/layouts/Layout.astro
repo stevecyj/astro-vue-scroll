@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions"
+import { ClientRouter } from "astro:transitions"
 import LayoutWrapper from "../components/LayoutWrapper.vue"
 
 export interface Props {
@@ -19,7 +19,7 @@ const { title, description = "Astro Vue Vertical Scroll Demo" } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
     <style>
       * {
         margin: 0;
