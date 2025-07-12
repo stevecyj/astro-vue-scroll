@@ -1,0 +1,138 @@
+
+## HEADERS
+
+## TECH STACK
+
+## PROJECT DOCUMENTATION & CONTEXT SYSTEM
+
+## CODING STANDARDS
+
+## WORKFLOW & RELEASE RULES
+
+## DEBUGGING
+
+## FRAMEWORK-SPECIFIC INTEGRATIONS
+
+### React
+
+Use the `@stagewise/toolbar-react` package for integration.
+Also, install and use the `@stagewise-plugins/react` package for react specific functionality.
+
+Include the StagewiseToolbar component (exported by the `@stagewise/toolbar-react` package) inside the top-most component of the app.
+Set the `config` prop to an object with the plugins array containing the `ReactPlugin` (exported by the `@stagewise-plugins/react` package).
+
+Note: The `@stagewise/toolbar-react` package already handles rendering the toolbar only in development mode. The "enabled" prop can be overriden with custom logic to conditionally load the toolbar.
+
+### Next.js
+
+Use the `@stagewise/toolbar-next` package for integration.
+Also, install and use the `@stagewise-plugins/react` package for react specific functionality.
+
+Include the StagewiseToolbar component in the root layout file (layout.tsx).
+Set the `config` prop to an object with the plugins array containing the `ReactPlugin` (exported by the `@stagewise-plugins/react` package).
+
+Note: The `@stagewise/toolbar-next` package already handles opt-out of SSR so that a simple integration of the component is enough.
+Note: The `@stagewise/toolbar-next` package already handles rendering the toolbar only in development mode. The "enabled" prop can be overriden with custom logic to conditionally load the toolbar.
+
+### Vue
+
+Use the `@stagewise/toolbar-vue` package for integration.
+Also, install and use the `@stagewise-plugins/vue` package for vue specific functionality.
+
+Add the StagewiseToolbar component to the main App component.
+Set the `config` prop to an object with the plugins array containing the `VuePlugin` (exported by the `@stagewise-plugins/vue` package).
+
+### Nuxt.js
+
+Use the `@stagewise/toolbar-nuxt` package for integration.
+Also, install and use the `@stagewise-plugins/vue` package for vue specific functionality.
+
+Wrap the StagewiseToolbar component in a ClientOnly component to ensure it only renders on the client side.
+Set the `config` prop to an object with the plugins array containing the `VuePlugin` (exported by the `@stagewise-plugins/vue` package).
+
+### Svelte
+
+Use the `@stagewise/toolbar` package for integration.
+
+If the project is using SvelteKit, put the following code into the `hooks.client.ts` file:
+```ts
+import { initToolbar } from '@stagewise/toolbar';
+
+export function init() {
+  // Keep other functionality that may already exist in the file
+  // Just add the below initToolbar call (conditionally, depending if a dev mode is detected)
+
+  // If the users uses other existing metrics to check for dev mode, use that instead of import.meta.env.DEV
+  if (import.meta.env.DEV) {
+    initToolbar({
+      plugins: [],
+    });
+  }
+}
+```
+
+If the project is using Svelte without SvelteKit, put the following code into the `main.ts` file (or any other file that is the entry to the app):
+```ts
+import { initToolbar } from '@stagewise/toolbar';
+
+initToolbar({
+  plugins: [],
+});
+```
+
+### Astro
+
+Use the `@stagewise/toolbar` package for integration.
+
+In `Layout.astro`, initialize the toolbar in a client-side script:
+
+```astro
+---
+// src/layouts/Layout.astro
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{Astro.props.title}</title>
+  </head>
+  <body>
+    <slot />
+    <script>
+      if (import.meta.env.DEV) {
+        import { initToolbar } from '@stagewise/toolbar';
+        initToolbar({
+          plugins: [],
+        });
+      }
+    </script>
+  </body>
+</html>
+```
+
+Ensure the script is placed within `<script>` tags to guarantee browser execution and prevent SSR conflicts. Use `import.meta.env.DEV` to conditionally load the toolbar in development mode.
+
+## WORKSPACE EXTENSIONS LIST
+
+The recommended extensions lsit for a workspace is located in the root fo the workspace and has the filename "extensions.json".
+
+```json
+{
+  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+}
+```
+
+Make sure, that the stagewise extension is added to the recommended extensions list if it is not already present. The name of the extension is "stagewise.stagewise-vscode-extension".
+
+If the list does not yet exist, create a new one with the following content:
+
+```json
+{
+  "recommendations": ["stagewise.stagewise-vscode-extension"]
+}
+```
+
+## ERROR HANDLING
