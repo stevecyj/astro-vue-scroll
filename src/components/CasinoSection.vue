@@ -1,27 +1,36 @@
+<script setup>
+import LayoutWrapper from "./LayoutWrapper.vue"
+</script>
 <template>
   <div class="casino-section">
-    <div class="container">
-      <h1>Live Casino</h1>
-      <p>Experience the thrill of real-time gaming with our state-of-the-art live casino platform featuring professional dealers and immersive gameplay.</p>
-      <div class="games-grid">
-        <div class="game-card">
-          <h3>Blackjack</h3>
-          <p>Classic card game with live dealers</p>
-        </div>
-        <div class="game-card">
-          <h3>Roulette</h3>
-          <p>Spin the wheel in real-time</p>
-        </div>
-        <div class="game-card">
-          <h3>Baccarat</h3>
-          <p>Elegant and sophisticated gameplay</p>
-        </div>
-        <div class="game-card">
-          <h3>Poker</h3>
-          <p>Strategic card game tournaments</p>
+    <LayoutWrapper>
+      <div class="container">
+        <h1>Live Casino</h1>
+        <p>
+          Experience the thrill of real-time gaming with our state-of-the-art
+          live casino platform featuring professional dealers and immersive
+          gameplay.
+        </p>
+        <div class="games-grid">
+          <div class="game-card">
+            <h3>Blackjack</h3>
+            <p>Classic card game with live dealers</p>
+          </div>
+          <div class="game-card">
+            <h3>Roulette</h3>
+            <p>Spin the wheel in real-time</p>
+          </div>
+          <div class="game-card">
+            <h3>Baccarat</h3>
+            <p>Elegant and sophisticated gameplay</p>
+          </div>
+          <div class="game-card">
+            <h3>Poker</h3>
+            <p>Strategic card game tournaments</p>
+          </div>
         </div>
       </div>
-    </div>
+    </LayoutWrapper>
   </div>
 </template>
 

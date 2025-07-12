@@ -1,33 +1,41 @@
+<script setup>
+import LayoutWrapper from "./LayoutWrapper.vue"
+</script>
 <template>
   <div class="contact-section">
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p>Get in touch with our team. We're here to help you with any questions or support you may need.</p>
-      <div class="contact-content">
-        <div class="contact-info">
-          <div class="info-item">
-            <h3>Email</h3>
-            <p>support@demo.com</p>
+    <LayoutWrapper>
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>
+          Get in touch with our team. We're here to help you with any questions
+          or support you may need.
+        </p>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="info-item">
+              <h3>Email</h3>
+              <p>support@demo.com</p>
+            </div>
+            <div class="info-item">
+              <h3>Phone</h3>
+              <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="info-item">
+              <h3>Address</h3>
+              <p>123 Demo Street, Tech City, TC 12345</p>
+            </div>
           </div>
-          <div class="info-item">
-            <h3>Phone</h3>
-            <p>+1 (555) 123-4567</p>
+          <div class="contact-form">
+            <form>
+              <input type="text" placeholder="Your Name" required />
+              <input type="email" placeholder="Your Email" required />
+              <textarea placeholder="Your Message" rows="5" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
           </div>
-          <div class="info-item">
-            <h3>Address</h3>
-            <p>123 Demo Street, Tech City, TC 12345</p>
-          </div>
-        </div>
-        <div class="contact-form">
-          <form>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
         </div>
       </div>
-    </div>
+    </LayoutWrapper>
   </div>
 </template>
 

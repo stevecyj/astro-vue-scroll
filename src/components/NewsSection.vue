@@ -1,26 +1,39 @@
+<script setup>
+import LayoutWrapper from "./LayoutWrapper.vue"
+</script>
 <template>
   <div class="news-section">
-    <div class="container">
-      <h1>Latest News</h1>
-      <p>Stay updated with the latest developments, announcements, and insights from our platform and industry.</p>
-      <div class="news-grid">
-        <article class="news-card">
-          <div class="news-date">Dec 15, 2024</div>
-          <h3>Platform Update 2.0</h3>
-          <p>Enhanced user experience with new features and improved performance.</p>
-        </article>
-        <article class="news-card">
-          <div class="news-date">Dec 10, 2024</div>
-          <h3>Security Enhancement</h3>
-          <p>Advanced security measures implemented for better user protection.</p>
-        </article>
-        <article class="news-card">
-          <div class="news-date">Dec 5, 2024</div>
-          <h3>New Game Releases</h3>
-          <p>Exciting new games added to our live casino collection.</p>
-        </article>
+    <LayoutWrapper>
+      <div class="container">
+        <h1>Latest News</h1>
+        <p>
+          Stay updated with the latest developments, announcements, and insights
+          from our platform and industry.
+        </p>
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-date">Dec 15, 2024</div>
+            <h3>Platform Update 2.0</h3>
+            <p>
+              Enhanced user experience with new features and improved
+              performance.
+            </p>
+          </article>
+          <article class="news-card">
+            <div class="news-date">Dec 10, 2024</div>
+            <h3>Security Enhancement</h3>
+            <p>
+              Advanced security measures implemented for better user protection.
+            </p>
+          </article>
+          <article class="news-card">
+            <div class="news-date">Dec 5, 2024</div>
+            <h3>New Game Releases</h3>
+            <p>Exciting new games added to our live casino collection.</p>
+          </article>
+        </div>
       </div>
-    </div>
+    </LayoutWrapper>
   </div>
 </template>
 

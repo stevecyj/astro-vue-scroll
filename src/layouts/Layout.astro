@@ -1,6 +1,5 @@
 ---
 import { ClientRouter } from "astro:transitions"
-import LayoutWrapper from "../components/LayoutWrapper.vue"
 
 export interface Props {
   title: string
@@ -36,20 +35,7 @@ const { title, description = "Astro Vue Vertical Scroll Demo" } = Astro.props
     </style>
   </head>
   <body>
-    <LayoutWrapper client:load>
-      <slot />
-    </LayoutWrapper>
-
-    <script>
-      import { initToolbar } from "@stagewise/toolbar"
-
-      // Initialize stagewise toolbar in development mode
-      if (import.meta.env.DEV) {
-        initToolbar({
-          plugins: [],
-        })
-      }
-    </script>
+    <slot />
 
     <style is:global>
       @view-transition {

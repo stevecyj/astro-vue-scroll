@@ -1,8 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import AboutSection from '../components/AboutSection.vue';
+import Layout from "../layouts/Layout.astro"
+import LayoutWrapper from "../components/LayoutWrapper.vue"
+import AboutSection from "../components/AboutSection.vue"
 ---
 
 <Layout title="Who We Are - Demo">
-  <AboutSection client:load />
+  <LayoutWrapper>
+    <AboutSection client:load />
+  </LayoutWrapper>
 </Layout>

@@ -1,4 +1,8 @@
+<script setup>
+import { StagewiseToolbar } from "@stagewise/toolbar-vue"
+</script>
 <template>
+  <StagewiseToolbar />
   <div class="page-container">
     <nav class="navbar">
       <div class="nav-container">
@@ -13,7 +17,7 @@
         </ul>
       </div>
     </nav>
-    
+
     <main class="main-content">
       <slot />
     </main>

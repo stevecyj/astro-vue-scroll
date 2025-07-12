@@ -1,10 +1,21 @@
+<script setup>
+import LayoutWrapper from "./LayoutWrapper.vue"
+const handleClick = () => {
+  console.log("clicked")
+}
+</script>
 <template>
   <div class="hero-section">
-    <div class="container">
-      <h1>Welcome to Our Platform</h1>
-      <p>Experience the future of online entertainment with cutting-edge technology and immersive experiences.</p>
-      <button class="cta-button">Get Started</button>
-    </div>
+    <LayoutWrapper>
+      <div class="container">
+        <h1>Welcome to Our Platform</h1>
+        <p>
+          Experience the future of online entertainment with cutting-edge
+          technology and immersive experiences.
+        </p>
+        <button class="cta-button" @click="handleClick">Get Started</button>
+      </div>
+    </LayoutWrapper>
   </div>
 </template>
 

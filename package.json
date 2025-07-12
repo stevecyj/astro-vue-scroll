@@ -14,5 +14,8 @@
     "astro": "^5.11.0",
     "lodash-es": "^4.17.21",
     "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "@stagewise/toolbar-vue": "^0.5.2"
   }
 }

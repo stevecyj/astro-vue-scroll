@@ -1,8 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CasinoSection from '../components/CasinoSection.vue';
+import Layout from "../layouts/Layout.astro"
+import LayoutWrapper from "../components/LayoutWrapper.vue"
+import CasinoSection from "../components/CasinoSection.vue"
 ---
 
 <Layout title="Live Casino - Demo">
-  <CasinoSection client:load />
+  <LayoutWrapper>
+    <CasinoSection client:load />
+  </LayoutWrapper>
 </Layout>

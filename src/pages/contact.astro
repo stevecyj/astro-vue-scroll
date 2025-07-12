@@ -1,8 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ContactSection from '../components/ContactSection.vue';
+import Layout from "../layouts/Layout.astro"
+import LayoutWrapper from "../components/LayoutWrapper.vue"
+import ContactSection from "../components/ContactSection.vue"
 ---
 
 <Layout title="Contact Us - Demo">
-  <ContactSection client:load />
+  <LayoutWrapper>
+    <ContactSection client:load />
+  </LayoutWrapper>
 </Layout>

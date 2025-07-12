@@ -1,38 +1,55 @@
+<script setup>
+import LayoutWrapper from "./LayoutWrapper.vue"
+</script>
 <template>
   <div class="blog-section">
-    <div class="container">
-      <h1>Our Blog</h1>
-      <p>Discover insights, tutorials, and industry trends through our comprehensive blog posts and expert commentary.</p>
-      <div class="blog-grid">
-        <article class="blog-card">
-          <div class="blog-category">Technology</div>
-          <h3>The Future of Web Development</h3>
-          <p>Exploring emerging trends and technologies that will shape the future of web development.</p>
-          <div class="blog-meta">
-            <span>Dec 12, 2024</span>
-            <span>5 min read</span>
-          </div>
-        </article>
-        <article class="blog-card">
-          <div class="blog-category">Design</div>
-          <h3>Creating Immersive User Experiences</h3>
-          <p>Best practices for designing interfaces that engage and delight users.</p>
-          <div class="blog-meta">
-            <span>Dec 8, 2024</span>
-            <span>7 min read</span>
-          </div>
-        </article>
-        <article class="blog-card">
-          <div class="blog-category">Industry</div>
-          <h3>Digital Transformation Trends</h3>
-          <p>How businesses are adapting to the digital-first world and leveraging new technologies.</p>
-          <div class="blog-meta">
-            <span>Dec 3, 2024</span>
-            <span>6 min read</span>
-          </div>
-        </article>
+    <LayoutWrapper>
+      <div class="container">
+        <h1>Our Blog</h1>
+        <p>
+          Discover insights, tutorials, and industry trends through our
+          comprehensive blog posts and expert commentary.
+        </p>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-category">Technology</div>
+            <h3>The Future of Web Development</h3>
+            <p>
+              Exploring emerging trends and technologies that will shape the
+              future of web development.
+            </p>
+            <div class="blog-meta">
+              <span>Dec 12, 2024</span>
+              <span>5 min read</span>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-category">Design</div>
+            <h3>Creating Immersive User Experiences</h3>
+            <p>
+              Best practices for designing interfaces that engage and delight
+              users.
+            </p>
+            <div class="blog-meta">
+              <span>Dec 8, 2024</span>
+              <span>7 min read</span>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-category">Industry</div>
+            <h3>Digital Transformation Trends</h3>
+            <p>
+              How businesses are adapting to the digital-first world and
+              leveraging new technologies.
+            </p>
+            <div class="blog-meta">
+              <span>Dec 3, 2024</span>
+              <span>6 min read</span>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
+    </LayoutWrapper>
   </div>
 </template>
 

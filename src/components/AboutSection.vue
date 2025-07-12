@@ -1,23 +1,32 @@
+<script setup>
+import LayoutWrapper from "./LayoutWrapper.vue"
+</script>
 <template>
   <div class="about-section">
-    <div class="container">
-      <h1>Who We Are</h1>
-      <p>We are a team of passionate innovators dedicated to creating exceptional digital experiences that transform the way people interact with technology.</p>
-      <div class="features-grid">
-        <div class="feature">
-          <h3>Innovation</h3>
-          <p>Pushing boundaries with cutting-edge technology</p>
-        </div>
-        <div class="feature">
-          <h3>Excellence</h3>
-          <p>Delivering superior quality in everything we do</p>
-        </div>
-        <div class="feature">
-          <h3>Trust</h3>
-          <p>Building lasting relationships through reliability</p>
+    <LayoutWrapper>
+      <div class="container">
+        <h1>Who We Are</h1>
+        <p>
+          We are a team of passionate innovators dedicated to creating
+          exceptional digital experiences that transform the way people interact
+          with technology.
+        </p>
+        <div class="features-grid">
+          <div class="feature">
+            <h3>Innovation</h3>
+            <p>Pushing boundaries with cutting-edge technology</p>
+          </div>
+          <div class="feature">
+            <h3>Excellence</h3>
+            <p>Delivering superior quality in everything we do</p>
+          </div>
+          <div class="feature">
+            <h3>Trust</h3>
+            <p>Building lasting relationships through reliability</p>
+          </div>
         </div>
       </div>
-    </div>
+    </LayoutWrapper>
   </div>
 </template>
 
