@@ -6,7 +6,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "codegen": "playwright codegen http://localhost:4321",
+    "codegen:chromium": "playwright codegen --browser=chromium http://localhost:4321",
+    "codegen:firefox": "playwright codegen --browser=firefox http://localhost:4321",
+    "codegen:webkit": "playwright codegen --browser=webkit http://localhost:4321",
+    "playwright:install": "playwright install",
+    "test:report": "playwright show-report"
   },
   "dependencies": {
     "@astrojs/vue": "^5.1.0",
@@ -16,6 +25,7 @@
     "vue": "^3.5.17"
   },
   "devDependencies": {
+    "@playwright/test": "^1.54.1",
     "@stagewise/toolbar-vue": "^0.5.2"
   }
 }
