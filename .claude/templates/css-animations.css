@@ -1,0 +1,140 @@
+/* 
+ * 動態頁面轉場 CSS 動畫系統模板
+ * 基於 commit a3fae4e 的實作分析
+ * 適用於任何支援 View Transitions API 的框架
+ */
+
+/* ========================================
+   基礎 View Transitions 設定
+======================================== */
+@view-transition {
+  navigation: auto;
+}
+
+/* ========================================
+   預設轉場動畫 (Normal → Normal)
+======================================== */
+::view-transition-old(root) {
+  animation: slide-out-up 0.6s ease-in-out;
+}
+
+::view-transition-new(root) {
+  animation: slide-in-down 0.6s ease-in-out;
+}
+
+/* ========================================
+   特殊頁面轉場動畫
+   用於固定的 view-transition-name 頁面
+======================================== */
+
+/* 特殊頁面預設進出場 (Special → Special) */
+::view-transition-old(hero-page),
+::view-transition-old(about-page) {
+  animation: slide-out-down 0.6s ease-in-out;
+}
+
+::view-transition-new(hero-page),
+::view-transition-new(about-page) {
+  animation: slide-in-up 0.6s ease-in-out;
+}
+
+/* 特殊頁面向上退出 (Special → Normal) */
+::view-transition-old(hero-page-up),
+::view-transition-old(about-page-up) {
+  animation: slide-out-up 0.6s ease-in-out;
+}
+
+/* 普通頁面向下退出 (Normal → Special) */
+::view-transition-old(normal-page-down) {
+  animation: slide-out-down 0.6s ease-in-out;
+}
+
+/* ========================================
+   Keyframe 動畫定義
+======================================== */
+
+/* 向上滑出 */
+@keyframes slide-out-up {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* 向下滑入 */
+@keyframes slide-in-down {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 向下滑出 */
+@keyframes slide-out-down {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* 向上滑入 */
+@keyframes slide-in-up {
+  from {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   無障礙支援 - 關閉動畫
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-old(hero-page),
+  ::view-transition-old(about-page),
+  ::view-transition-new(hero-page),
+  ::view-transition-new(about-page),
+  ::view-transition-old(hero-page-up),
+  ::view-transition-old(about-page-up),
+  ::view-transition-old(normal-page-down) {
+    animation: none;
+  }
+}
+
+/* ========================================
+   自定義配置說明
+======================================== */
+
+/*
+轉場邏輯矩陣:
+┌─────────────────┬─────────────────┬─────────────────┐
+│ 來源 → 目標     │ 退出動畫        │ 進入動畫        │
+├─────────────────┼─────────────────┼─────────────────┤
+│ Special → Normal│ slide-out-up    │ slide-in-down   │
+│ Special → Special│ slide-out-down │ slide-in-up     │
+│ Normal → Special│ slide-out-down  │ slide-in-up     │
+│ Normal → Normal │ slide-out-up    │ slide-in-down   │
+└─────────────────┴─────────────────┴─────────────────┘
+
+使用方式:
+1. 特殊頁面需在 CSS 中設定固定的 view-transition-name
+2. JavaScript 根據轉場類型動態修改 view-transition-name
+3. 所有動畫時長統一為 0.6s，可根據需求調整
+*/
